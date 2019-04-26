@@ -1,0 +1,274 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+/*----------------------------
+RESET
+------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1.8;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------------------
+VARIABLES
+--------------------*/
+:root{
+    --white:         #fff;
+    --green:         #5db250;
+    --green-light:   #9de7ac;
+    --gray-dark:     #323232;
+    --purple:        #8c40a3;
+    --font-size-base:  16px;
+    --font-size-sm:    14px;
+    --font-size-md:    26px;
+    --font-size-lg:    32px;
+    --font-size-xl:    45px;
+}
+
+/*----------------------
+GLOBAL
+------------------*/
+    body{
+        background-color: var(--white);
+        text-decoration: none;
+        color: var(--white);
+        font-family: 'Encode Sans', sans-serif;
+        overflow-x: hidden;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+
+.container{
+    max-width: 1024px; 
+    margin: 0 auto;
+    padding-left: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.container--top{
+    background-color: var(--white);
+    position: relative;
+}
+
+
+
+/*------------------
+IMAGEN DE FONDO 
+----------------------*/
+.bootcamp{
+    background-image: url('../img/01.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #360b6d71;
+    background-blend-mode: overlay;
+    position: relative;
+    z-index: -5;
+    padding-top: 94px;
+}
+
+
+/*-------------------
+HEADER
+----------------*/
+
+
+/* Titulo con detalle
+--------------------*/
+
+.bootcamp__heading{
+    font-size: var(--font-size-xl);
+    margin-bottom: 21px;
+    color: var(--white);
+    background-image: url(../img/logo_01.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 5%;
+    padding-left: 56px;
+}
+
+.bootcamp__heading > span{
+    display: inline-block;
+    font-size: var(--font-size-md);
+    padding-left: 25px;
+    margin-left: 15px;
+    position: relative;
+    font-weight: 100;
+}
+
+.bootcamp__heading > span::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    border-left: 2px solid var(--white);
+    height: 27px;
+}
+
+/*Subtitulo
+-----------------*/
+
+.bootcamp__sub-heading{
+    font-size: var(--font-size-lg);
+    color: var(--green-light);
+    font-weight: 100;
+    margin-bottom: 58px;
+    position: relative;
+}
+
+.bootcamp__sub-heading:nth-child(2){
+    margin-bottom: 20px;
+}
+
+
+/*Lista
+--------------------*/
+
+.bootcamp__metainfo{
+    margin-bottom: 35px;
+}
+
+.bootcamp__metainfo li{
+    color: var(--white);
+    font-size: var(--font-size-sm);
+    display: inline-block;
+    position: relative;
+    min-width: 75px;
+    padding-top: 52px;
+    text-align: center;
+}
+
+.bootcamp__metainfo li::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 75px;
+    height: 1px;
+    background-color: var(--white);
+    transform: translate3d(0,-10px,0);
+}
+
+.bootcamp__metainfo li:nth-of-type(1n+2){
+    margin-left: 61px;
+}
+
+/*Fondos segun info*/
+li[aria-label]{
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+
+li[aria-label="Fecha de inicio"]{
+    background-image: url(../img/calendar.png);
+}
+
+li[aria-label="Asistencia"]{
+    background-image: url(../img/presen.png);
+}
+
+li[aria-label="Dónde"]{
+    background-image: url(../img/map.png);
+    background-size: 20%;
+}
+
+abbr[title="Abril"]{
+    text-decoration: none;
+}
+
+/*Explicacion curso
+-------------------*/
+
+.bootcamp__lead{
+    font-size: 32px;
+    max-width: 760px;
+    font-weight: 100;
+    margin-bottom: 256px;
+    
+}
+
+.bootcamp__text{
+    font-size: var(--font-size-base);
+    color: var(--gray-dark);
+    line-height: 1.81;
+    max-width: 593px;
+    margin-bottom: 20px;
+}
+
+
+/*Boton*/
+.btn{
+    background-color: transparent;
+    padding: 10px 25px;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.retoque{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+
+.retoque::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -93px;
+    right: 0;
+    left: -131px;
+    bottom: 0;
+    height: 400px;
+    width: 130%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 -40px 1px rgba(255, 255, 255, .3);
+    transform: rotate(10deg);
+}
