@@ -62,7 +62,7 @@ VARIABLES
     --font-size-md:    26px;
     --font-size-lg:    32px;
     --font-size-xl:    45px;
-    --breakpoint1:     768px;
+    --container-padding: 86px;
 }
 
 /*----------------------
@@ -83,36 +83,12 @@ a{
     position: relative;
     max-width: 1024px; 
     margin: 0 auto;
+    z-index:15;
 }
 
 @media (min-width:768px){
     .container{
-        padding-left: 80px;
-    }
-}
-
-/*------------------
-IMAGEN DE FONDO 
-----------------------*/
-.bootcamp{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('../img/02.jpg');
-    background-color: #3123ae79; 
-    background-blend-mode: overlay;
-}
-
-@media (max-width:767px){
-    .bootcamp{
-        background-position: -170px -110px;
-        padding: 38px 32px;
-    }
-}
-
-@media (min-width:768px){
-    .bootcamp{
-        background-position: 0 -265px;
-        padding-top: 94px;
+        padding-left: var(--container-padding);
     }
 }
 
@@ -120,12 +96,68 @@ IMAGEN DE FONDO
 HEADER
 ----------------*/
 
+
+/*Imagen de fondo 
+----------------------*/
 .bootcamp{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/bg-header.jpg');
     overflow: hidden;
+    position: relative;    
 }
+
+@media (max-width:767px){
+    .bootcamp{ 
+        background-position: -400px -145px;
+        padding: 38px 32px;
+    }
+}
+
+@media (min-width:768px){
+    .bootcamp{
+        background-size: 195%;
+        background-position: -238px -240px;
+        padding-top: 94px;
+    }
+}
+
+/*Skew
+--------------------*/
+.bootcamp::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 -40px 0px rgba(255, 255, 255, .4);
+    transform:  skewY(14deg);
+}
+
+@media(max-width:767px){
+    .bootcamp::after{
+        top: 555px;
+        box-shadow: 0 -30px 0px rgba(255, 255, 255, .4);
+    }
+}
+
+@media(min-width:768px){
+    .bootcamp::after{
+        top: 655px;
+    }
+}
+
+
+
 
 /* Titulo con detalle
 --------------------*/
+
+.bootcamp__header{
+    position: relative;
+}
 
 .bootcamp__heading{
     background-position: left center;
@@ -206,12 +238,13 @@ HEADER
     .container > .bootcamp__sub-heading{
         margin-bottom: 10px;
         font-size: var(--font-size-md);
+        line-height: 1.3;
     }
 }
 
 @media (min-width:768px){
     .bootcamp__sub-heading{
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         font-size: var(--font-size-lg);
     }
     .container > .bootcamp__sub-heading{
@@ -246,14 +279,14 @@ HEADER
     }
     .bootcamp__metainfo li{
         display: inline-block;
-        min-width: 75px;
-        padding-top: 52px;
+        min-width: 55px;
+        padding-top: 42px;
         text-align: center;
     }
     .bootcamp__metainfo li::before{
         content: '';
         display: block;
-        position: absolute;
+        position: relative;
         width: 75px;
         height: 1px;
         background-color: var(--white);
@@ -266,28 +299,28 @@ HEADER
 
 /*Fondos segun info*/
 
-.bootcamp__logo{
+.bootcamp__metainfo li[aria-label]{
     background-repeat: no-repeat;
 }
-.bootcamp__logo:nth-of-type(1){
+.bootcamp__metainfo li[aria-label]:nth-of-type(1){
     background-image: url(../img/calendar.png);
 }
-.bootcamp__logo:nth-of-type(2){
+.bootcamp__metainfo li[aria-label]:nth-of-type(2){
     background-image: url(../img/presen.png);
 }
-.bootcamp__logo:nth-of-type(3){
+.bootcamp__metainfo li[aria-label]:nth-of-type(3){
     background-image: url(../img/map.png);
-    background-size: 18px;
+    background-size: 14px;
 }
 
 @media (max-width:767px){
-    .bootcamp__logo{
+    .bootcamp__metainfo li[aria-label]{
         background-size: 22px;
     }
 }
 
 @media(min-width:768px){
-    .bootcamp__logo{
+    .bootcamp__metainfo li[aria-label]{
         background-position: top center;
         background-size: 20px;
     }
@@ -319,7 +352,7 @@ abbr{
     }
     .bootcamp__text{
         max-width: 262px; 
-        margin-bottom: 34px;
+        margin-bottom: 30px;
     }
 }
 
@@ -362,7 +395,7 @@ abbr{
     } 
 }
 
-.skew{
+/* .skew{
     position: relative;
 }
 
@@ -379,7 +412,6 @@ abbr{
     transform:  skewY(15deg) scale(3);
 }
 
-
 @media (max-width:767px){
     .skew::before{
         top: 170px;
@@ -391,6 +423,4 @@ abbr{
     .skew::before{
         box-shadow: 0 -15px 0px rgba(255, 255, 255, .4);
     }
-}
-
-
+} */
