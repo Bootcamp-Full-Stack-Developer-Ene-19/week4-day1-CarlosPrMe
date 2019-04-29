@@ -57,12 +57,12 @@ VARIABLES
     --green-light:   #9de7ac;
     --gray-dark:     #323232;
     --purple:        #8c40a3;
-    --font-size-base:  16px;
-    --font-size-sm:    14px;
-    --font-size-md:    26px;
-    --font-size-lg:    32px;
-    --font-size-xl:    45px;
-    --container-padding: 86px;
+    --font-size-base:  1rem;
+    --font-size-sm:    0.875rem;
+    --font-size-md:    1.625rem;
+    --font-size-lg:    2rem;
+    --font-size-xl:    2.8125rem;
+    --container-padding: 5.375rem;
 }
 
 /*----------------------
@@ -81,9 +81,9 @@ a{
 
 .container{
     position: relative;
-    max-width: 1024px; 
+    max-width: 64rem; 
     margin: 0 auto;
-    z-index:15;
+    z-index:1;
 }
 
 @media (min-width:768px){
@@ -109,15 +109,15 @@ HEADER
 
 @media (max-width:767px){
     .bootcamp{ 
-        background-position: -400px -145px;
-        padding: 38px 32px;
+        background-position: -25rem -9.0625rem;
+        padding: 2.375rem 2rem;
     }
 }
 
 @media (min-width:768px){
     .bootcamp{
         background-size: 195%;
-        background-position: -238px -240px;
+        background-position: -15.2rem -15.3rem;
         padding-top: 94px;
     }
 }
@@ -132,24 +132,22 @@ HEADER
     height: 100%;
     width: 100vw;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 -40px 0px rgba(255, 255, 255, .4);
+    box-shadow: 0 -2.5rem 0 rgba(255, 255, 255, .4);
     transform:  skewY(14deg);
 }
 
 @media(max-width:767px){
     .bootcamp::after{
-        top: 555px;
-        box-shadow: 0 -30px 0px rgba(255, 255, 255, .4);
+        top: 34.6875rem;
+        box-shadow: 0 -1.875rem 0 rgba(255, 255, 255, .4);
     }
 }
 
 @media(min-width:768px){
     .bootcamp::after{
-        top: 655px;
+        top: 40.9375rem;
     }
 }
-
-
 
 
 /* Titulo con detalle
@@ -163,8 +161,10 @@ HEADER
     background-position: left center;
     background-repeat: no-repeat;
     background-image: url(../img/logo_01.png);
+    background-size: 4rem;
     color: var(--white);
     font-weight: 100;
+    overflow: hidden;
 }
 
 .bootcamp__heading > span{
@@ -175,50 +175,50 @@ HEADER
     content: '';
     display: inline-block;
     position: absolute;
-    top: 10px;
+    top: 0.625rem;
     left: 0;
     border-left: 2px solid var(--white);
 }
 
 @media (max-width:767px){
     .bootcamp__header{
-        margin-bottom: 174px;
+        margin-bottom: 10.875rem;
     }
 
     .bootcamp__heading{
-        padding-left: 40px;
-        background-size: 30px;
-        font-size: 30px;
+        padding-left: 2.5rem;
+        background-size: 1.875rem;
+        font-size: 1.875rem;
     }
 
     .bootcamp__heading > span{
-        margin-left: 8px;
-        padding-left: 15px;
-        font-size: 20px;
+        margin-left: 0.5rem;
+        padding-left: 0.9375rem;
+        font-size: 1.25rem;
     }
     .bootcamp__heading > span::before{
         border-width: 1px;
-        height: 20px;
+        height: 1.25rem;
     }
 }
 
 @media (min-width:768px){
     .bootcamp__header{
-        margin-bottom: 256px;
+        margin-bottom: 16rem;
     }
     .bootcamp__heading{
-        padding-left: 56px;
-        background-size: 45px;
+        padding-left: 3.5rem;
+        background-size: 2.8125rem;
         font-size: var(--font-size-xl);
     }
     .bootcamp__heading > span{
-        margin-left: 15px;
-        padding-left: 25px;
+        margin-left: 0.9375rem;
+        padding-left: 1.5625rem;
         font-size: var(--font-size-md);
     }
 
     .bootcamp__heading > span::before{
-        height: 27px;
+        height: 1.6875rem;
     }
 }
 
@@ -232,11 +232,11 @@ HEADER
 
 @media (max-width:767px){
     .bootcamp__sub-heading{
-        margin-bottom: 48px;
-        font-size: 18px;
+        margin-bottom: 3rem;
+        font-size: 1.125rem;
     }
     .container > .bootcamp__sub-heading{
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
         font-size: var(--font-size-md);
         line-height: 1.3;
     }
@@ -244,11 +244,11 @@ HEADER
 
 @media (min-width:768px){
     .bootcamp__sub-heading{
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
         font-size: var(--font-size-lg);
     }
     .container > .bootcamp__sub-heading{
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
         font-size: var(--font-size-md);
     }
 }
@@ -263,37 +263,37 @@ HEADER
 
 @media (max-width:767px){
     .bootcamp__metainfo{
-        margin-bottom: 35px;
+        margin-bottom: 2.1875rem;
     }
     .bootcamp__metainfo li{
         display: block;
-        padding-bottom: 20px;
-        padding-left: 40px;
+        padding-bottom: 1.25rem;
+        padding-left: 2.5rem;
     }
 
 }
 
 @media (min-width:768px){
     .bootcamp__metainfo{
-        margin-bottom: 35px;
+        margin-bottom: 2.1875rem;
     }
     .bootcamp__metainfo li{
         display: inline-block;
-        min-width: 55px;
-        padding-top: 42px;
+        min-width: 3.4375rem;
+        padding-top: 2.625rem;
         text-align: center;
     }
     .bootcamp__metainfo li::before{
         content: '';
         display: block;
         position: relative;
-        width: 75px;
+        width: 4.6875rem;
         height: 1px;
         background-color: var(--white);
-        transform: translate3d(0,-10px,0);
+        transform: translate3d(0,-0.625rem,0);
     }
     .bootcamp__metainfo li:nth-of-type(1n+2){
-        margin-left: 61px;
+        margin-left: 3.8125rem;
     }
 }
 
@@ -310,19 +310,19 @@ HEADER
 }
 .bootcamp__metainfo li[aria-label]:nth-of-type(3){
     background-image: url(../img/map.png);
-    background-size: 14px;
+    background-size: 0.875rem;
 }
 
 @media (max-width:767px){
     .bootcamp__metainfo li[aria-label]{
-        background-size: 22px;
+        background-size: 1.375rem;
     }
 }
 
 @media(min-width:768px){
     .bootcamp__metainfo li[aria-label]{
         background-position: top center;
-        background-size: 20px;
+        background-size: 1.25rem;
     }
 }
 
@@ -351,19 +351,19 @@ abbr{
         font-size: 20px;
     }
     .bootcamp__text{
-        max-width: 262px; 
-        margin-bottom: 30px;
+        max-width: 16.375rem; 
+        margin-bottom: 1.875rem;
     }
 }
 
 @media(min-width:768px){
     .bootcamp__lead{ 
-        max-width: 760px;
+        max-width: 47.5rem;
         font-size: var(--font-size-lg);
     }
     .bootcamp__text{
-        margin-bottom: 40px;
-        max-width: 593px;
+        margin-bottom: 2.5rem;
+        max-width: 37rem;
     }
 }
 
@@ -372,11 +372,11 @@ abbr{
 .btn{
     display: inline-block;
     border: 1px solid var(--purple);
-    border-radius: 25px;
-    margin-bottom: 72px;
-    padding: 10px 35px;
+    border-radius: 1.5625rem;
+    margin-bottom: 4.5rem;
+    padding: 0.625rem 2.2rem;
     background-color: #fff;
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--purple);
     cursor: pointer;
     transition: all 150ms linear;
@@ -395,32 +395,3 @@ abbr{
     } 
 }
 
-/* .skew{
-    position: relative;
-}
-
-.skew::before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 140px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 -15px 0px rgba(255, 255, 255, .4);
-    transform:  skewY(15deg) scale(3);
-}
-
-@media (max-width:767px){
-    .skew::before{
-        top: 170px;
-        box-shadow: 0 -10px 0px rgba(255, 255, 255, .4);
-    }
-}
-
-@media (min-width:768px){
-    .skew::before{
-        box-shadow: 0 -15px 0px rgba(255, 255, 255, .4);
-    }
-} */
